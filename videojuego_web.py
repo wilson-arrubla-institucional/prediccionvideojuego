@@ -11,15 +11,12 @@ st.set_page_config(page_title="Modelo para la predicción de compra de videojuen
 st.title("Predicción Compra video juegos en tienda")
 
 # montar imagen
-from pathlib import Path
 
-# Construir la ruta correctamente
-image_path = Path("src") / "videojuego.gif"
-st.image(str(image_path))
+st.image("videojuego.gif")
 
 #Cargamos el modelo
 import pickle
-filename = Path("src") /'modelo-reg-tree-knn-nn.pkl'
+filename = 'modelo-reg-tree-knn-nn.pkl'
 #filename = 'modelo-reg-tree.pkl'
 model_Tree,model_Knn, model_NN,variables, min_max_scaler = pickle.load(open(filename, 'rb')) #DT-Knn
 
